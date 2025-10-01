@@ -7,7 +7,7 @@
 # include <math.h>
 # include <stdlib.h>
 # define PI 3.14159265359
-# define RADIAAL (PI / 180)
+# define RADIAL (PI / 180)
 # define TIMES 180
 
 
@@ -15,9 +15,9 @@ float  tmp, y_start, x_start, x_end, brace1;
 
 int main(void)
 {
-    double const rad = RADIAAL;
+    double const rad = RADIAL;
     double pi, A, r1, r2, Alpha, Alpha_hlp1, Alpha_hlp2, Alpha_hlp3;
-    float  od_leg, od_brace, wt_brace, angle, RadiusLeg, Rbrace, Ordinate[TIMES], y[TIMES], c_pixel;
+    float  od_leg, od_brace, wt_brace, angle, RadiusLeg, Rbrace, Ordinate[TIMES + 1], y[TIMES + 1], c_pixel;
     int    i;
 
     printf("\nEnter the following values:\n\n");
