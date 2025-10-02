@@ -3,22 +3,22 @@
  *
  * Thom Nijdam
  */
-# include <math.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <ctype.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-# define PI 3.14159265359
-# define RADIAL (PI / 180)
-# define TIMES 180
+#define PI 3.14159265359
+#define RADIAL (PI / 180)
+#define TIMES 180
 
 float tmp, y_start, x_start, x_end, brace1;
 
 int main(void)
 {
-    double const rad = RADIAL;
-    double pi, A, r1, r2, Alpha,  Alpha_hlp2;
-    float od_leg, od_brace, wt_brace, angle, RadiusLeg, Rbrace, x_axis[TIMES], y_axis[TIMES], units, Alpha_hlp1, Alpha_hlp3;
+    float const rad = RADIAL;
+    float pi, A, r1, r2, Alpha, Alpha_hlp1, Alpha_hlp2, Alpha_hlp3;
+    float od_leg, od_brace, wt_brace, angle, RadiusLeg, Rbrace, x_axis[TIMES], y_axis[TIMES], units;
     int i;
     char unit;
 
@@ -32,7 +32,7 @@ int main(void)
     printf("Wallthickness Brace\t\t: ");
     scanf("%f", &wt_brace);
     printf("Angle between Leg and Brace\t: ");
-    scanf("%d", &angle);
+    scanf("%f", &angle);
 
     if (angle > 90)
         angle = 180 - angle;
@@ -55,7 +55,8 @@ int main(void)
     r1 = pow(Rbrace, 2);
     r2 = pow(RadiusLeg, 2);
     // Debug info
-    printf("Radiusleg: %0.2lf, Rbrace: %0.2lf, brace1: %0.2lf, angle in rad: %lf\n", RadiusLeg, Rbrace, brace1, angle);
+    printf("Radiusleg: %0.2lf, Rbrace: %0.2lf, brace1: %0.2lf, angle in rad: %lf\n", RadiusLeg,
+           Rbrace, brace1, angle);
     for (i = 0; i <= 180; i += 10)
     {
         Alpha = i * 1.0;
@@ -66,7 +67,7 @@ int main(void)
         A = 1 - (sqrt(1 - ((r1 / r2) * Alpha_hlp2)));
         x_axis[i] = ((RadiusLeg / sin(angle)) * A) + ((Rbrace / tan(angle)) * (1 - Alpha_hlp3));
         y_axis[i] = fabs(brace1 * Alpha_hlp3);
-        printf("x-axis[%i]\t= %f\t, y-axis[%i]=\t %f\n", i, x_axis[i], i, y_axis[i]);
+        printf("x[%3i] = %8.3f, y[%3i] = %8.3f\n", i, x_axis[i], i, y_axis[i]);
     }
     system("pause");
 }
