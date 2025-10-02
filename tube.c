@@ -23,7 +23,7 @@ int main(void)
     char unit;
 
     printf("\nEnter the following values:\n\n");
-    printf("Dimensions [M]etric of [I]mperial?\t: ");
+    printf("Dimensions Metric or Imperial [M/I]?: ");
     scanf("%s", &unit);
     printf("Outside diameter Leg\t\t: ");
     scanf("%f", &outside_diameter_leg);
@@ -48,8 +48,8 @@ int main(void)
     /*
      * Calculate the x-axis
      */
-    outside_radius_leg = (outside_diameter_leg / 2.0);
-    inside_radius_brace = (outside_diameter_brace - (2.0 * wall_thickness_brace)) / 2.0;
+    outside_radius_leg   = (outside_diameter_leg   / 2.0);
+    inside_radius_brace  = (outside_diameter_brace - (2.0 * wall_thickness_brace)) / 2.0;
     outside_radius_brace = (outside_diameter_brace / 2.0);
     angle = angle * rad;
     r1 = pow(inside_radius_brace, 2);
