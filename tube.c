@@ -55,8 +55,8 @@ int main(void)
     r1 = pow(inside_radius_brace, 2);
     r2 = pow(outside_radius_leg, 2);
     // Debug info
-    printf("outside_radius_leg: %7.2lf, inside_radius_brace: %7.2lf, outside_radius_brace: %7.2lf, angle in rad: %lf\n", outside_radius_leg,
-           inside_radius_brace, outside_radius_brace, angle);
+    // printf("outside_radius_leg: %7.2lf, inside_radius_brace: %7.2lf, outside_radius_brace: %7.2lf, angle in rad: %lf\n", outside_radius_leg,
+    //       inside_radius_brace, outside_radius_brace, angle);
     for (i = 0; i <= 180; i += 10)
     {
         Alpha = i * 1.0;
