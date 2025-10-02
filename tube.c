@@ -18,7 +18,7 @@ int main(void)
 {
     double const rad = RADIAL;
     double pi, A, r1, r2, Alpha,  Alpha_hlp2;
-    float od_leg, od_brace, wt_brace, angle, RadiusLeg, Rbrace, x_axis[TIMES], y_axis[TIMES], units, Alpha_hlp1, Alpha_hlp1;
+    float od_leg, od_brace, wt_brace, angle, RadiusLeg, Rbrace, x_axis[TIMES], y_axis[TIMES], units, Alpha_hlp1, Alpha_hlp3;
     int i;
     char unit;
 
@@ -32,7 +32,7 @@ int main(void)
     printf("Wallthickness Brace\t\t: ");
     scanf("%f", &wt_brace);
     printf("Angle between Leg and Brace\t: ");
-    scanf("%f", &angle);
+    scanf("%d", &angle);
 
     if (angle > 90)
         angle = 180 - angle;
