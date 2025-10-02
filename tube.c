@@ -17,8 +17,8 @@ float tmp, y_start, x_start, x_end, brace1;
 int main(void)
 {
     double const rad = RADIAL;
-    double pi, A, r1, r2, Alpha, Alpha_hlp1, Alpha_hlp2, Alpha_hlp3;
-    float od_leg, od_brace, wt_brace, angle, RadiusLeg, Rbrace, x_axis[TIMES], y_axis[TIMES], units;
+    double pi, A, r1, r2, Alpha,  Alpha_hlp2;
+    float od_leg, od_brace, wt_brace, angle, RadiusLeg, Rbrace, x_axis[TIMES], y_axis[TIMES], units, Alpha_hlp1, Alpha_hlp1;
     int i;
     char unit;
 
