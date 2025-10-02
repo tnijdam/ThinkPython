@@ -52,21 +52,21 @@ int main(void)
     inside_radius_brace  = (outside_diameter_brace - (2.0 * wall_thickness_brace)) / 2.0;
     outside_radius_brace = (outside_diameter_brace / 2.0);
     angle = angle * rad;
-    r1 = pow(inside_radius_brace, 2);
-    r2 = pow(outside_radius_leg, 2);
+    r1 = powf(inside_radius_brace, 2.0f);
+    r2 = powf(outside_radius_leg, 2.0f);
     // Debug info
     // printf("outside_radius_leg: %7.2lf, inside_radius_brace: %7.2lf, outside_radius_brace: %7.2lf, angle in rad: %lf\n", outside_radius_leg,
     //       inside_radius_brace, outside_radius_brace, angle);
     for (i = 0; i <= 180; i += 10)
     {
-        Alpha = i * 1.0;
+        Alpha = i * 1.0f;
         Alpha = Alpha * rad;
-        Alpha_hlp1 = sin(Alpha);
-        Alpha_hlp3 = cos(Alpha);
-        Alpha_hlp2 = pow(Alpha_hlp1, 2);
-        A = 1 - (sqrt(1 - ((r1 / r2) * Alpha_hlp2)));
-        x_axis[i] = ((outside_radius_leg / sin(angle)) * A) + ((inside_radius_brace / tan(angle)) * (1 - Alpha_hlp3));
-        y_axis[i] = fabs(outside_radius_brace * Alpha_hlp3);
+        Alpha_hlp1 = sinf(Alpha);
+        Alpha_hlp3 = cosf(Alpha);
+        Alpha_hlp2 = powf(Alpha_hlp1, 2.0f);
+        A = 1.0f - sqrtf(1.0f - ((r1 / r2) * Alpha_hlp2));
+        x_axis[i] = ((outside_radius_leg / sinf(angle)) * A) + ((inside_radius_brace / tanf(angle)) * (1.0f - Alpha_hlp3));
+        y_axis[i] = fabsf(outside_radius_brace * Alpha_hlp3);
         printf("x[%3i] = %8.3f, y[%3i] = %8.3f\n", i, x_axis[i], i, y_axis[i]);
     }
     system("pause");
